@@ -1,0 +1,26 @@
+<section class="todo-section">
+  <h2>TODO APP</h2>
+  <button (click)="handleCreateClick()">Create new Activity</button>
+  <div class="columns-wrapper">
+    <div class="todo-column">
+      <h3>TODO</h3>
+      <app-todo-item
+        *ngFor="let item of todoItems"
+        [id]="item.id"
+        [value]="item.value"
+        type="todo"
+        (typeChange)="handleTypeChange($event)">
+      </app-todo-item>
+    </div>
+    <div class="done-column">
+      <h3>DONE</h3>
+      <app-todo-item
+        *ngFor="let item of doneItems"
+        [id]="item.id"
+        [value]="item.value"
+        type="done"
+        (typeChange)="handleTypeChange($event)">
+      </app-todo-item>
+    </div>
+  </div>
+</section>

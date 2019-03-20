@@ -1,0 +1,12 @@
+<div [class]="className">
+  <input
+    type="text"
+    [value]="value"
+    placeholder="Enter your activity"
+    (input)="handleInputChange($event)"
+    [disabled]="type === 'done'"
+  />
+  <button (click)="handleChangeTypeClick()" [disabled]="!value">
+    To {{ type === 'todo' ? 'done' : 'todo' }}
+  </button>
+</div>
